@@ -1,0 +1,304 @@
+{{define "offical/index.html"}} {{template "offical/header.html" .}}
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                润措域名资产管理平台
+            </h1>
+            <h2 class="subtitle">
+                您的域名投资小管家
+            </h2>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="columns pro">
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        省心管理
+                    </p>
+                    <p class="card-header-icon">
+                        <span class="icon">
+                            <i class="fas fa-heart"></i>
+                        </span>
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <p class="title is-5">域名到期提醒</p>
+                        <p class="title is-5">成本价格记录</p>
+                        <p class="title is-5">续费价格合计</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        专业停放
+                    </p>
+                    <p class="card-header-icon">
+                        <span class="icon">
+                            <i class="fab fa-expeditedssl"></i>
+                        </span>
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <p class="title is-5">访问流量统计</p>
+                        <p class="title is-5">报价信息收集</p>
+                        <p class="title is-5"><del>可自增一口价</del></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        专业工具
+                    </p>
+                    <p class="card-header-icon">
+                        <span class="icon">
+                            <i class="fas fa-wrench"></i>
+                        </span>
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <p class="title is-5"><del>域名估价信息</del></p>
+                        <p class="title is-5"><del>域名挂单监控</del></p>
+                        <p class="title is-5"><del>可自增一口价</del></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        投资升级
+                    </p>
+                    <p class="card-header-icon">
+                        <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </span>
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <p class="title is-5">群内大佬人脉</p>
+                        <p class="title is-5">投资心得分享</p>
+                        <p class="title is-5"><del>专业工具导航</del></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="has-text-centered split">
+        注：<del>删除线</del>的功能正在开发中。
+    </p>
+    <div class="level" id="login">
+        <div class="level-item">
+            <div>
+                <div class="tabs is-centered">
+                    <ul>
+                        <li class="is-active" data-option="1"><a>登录</a></li>
+                        <li data-option="2"><a>注册</a></li>
+                        <li data-option="3"><a>忘记密码</a></li>
+                    </ul>
+                </div>
+                <div class="tabs-container">
+                    <div class="container-item is-active" data-item="1">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">邮箱</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input" type="email" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">密码</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input" type="password" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <a class="button is-primary modal-show" data-option="recaptcha">
+                                    登录平台
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container-item" data-item="2">
+                        <div class="notification is-danger" style="display: none">
+                            <button class="delete"></button>
+                            <strong>出现错误啦：</strong>请您重试一次，如果持续出现错误可以联系客服。
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">邮箱</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <input required name="mail" class="input" type="email" placeholder="您的邮箱">
+                                    </div>
+                                    <div class="control">
+                                        <a class="button is-info modal-show" data-option="recaptcha">
+                                            发送验证码
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">验证码</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">密码</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input" type="password" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <a class="button is-primary">
+                                    注册账号
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container-item" data-item="3">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">邮箱</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <input class="input" type="email" placeholder="您的邮箱">
+                                    </div>
+                                    <div class="control">
+                                        <a class="button is-info modal-show" data-option="recaptcha">
+                                            发送验证码
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">验证码</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">新密码</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input" type="password" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <a class="button is-primary">
+                                    重置密码
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="level-item">
+            <div class="box">
+                <p class="title">
+                    本站服务刚刚启动，各位投资者积极反馈建议，平台会同大家一同成长。
+                </p>
+                <br>
+                <p class="subtitle">
+                    QQ交流群：710012414
+                </p>
+            </div>
+        </div>
+    </div>
+    <nav class="level stats">
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">注册用户</p>
+                <p class="title">1位</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">停放域名</p>
+                <p class="title">100个</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">访问量</p>
+                <p class="title">456K次</p>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div>
+                <p class="heading">运营时间</p>
+                <p class="title">789天</p>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="modal" data-item="recaptcha">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="g-recaptcha level-item" data-callback="index_recaptcha_callback" data-sitekey="6LfQlWsUAAAAABvm5rFgCpmqGJJitynKiF_fePXR"></div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" data-option="recaptcha"></button>
+</div>
+{{template "offical/footer.html" .}} {{end}}

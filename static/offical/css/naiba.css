@@ -1,0 +1,33 @@
+.pro {
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.stats {
+    padding: 20px;
+}
+
+.split {
+    margin-bottom: 20px;
+}
+
+.tabs-container .container-item {
+    display: none;
+}
+
+.tabs-container .container-item.is-active {
+    display: block;
+}
+
+#login div.container-item.is-active>div.field>div.field-body>div.has-addons>div:nth-child(1) {
+    width: 100%
+}
+
+@media screen and (min-width:768px) {
+    #login>.level-item>div {
+        width: 450px;
+    }
+    #login>.level-item>.box {
+        width: 400px;
+    }
+}
