@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/static/offical/icons/mstile-150x150.png"/>
+            <square150x150logo src="https://www.runcuo.com/static/offical/icons/mstile-150x150.png"/>
             <TileColor>#da532c</TileColor>
         </tile>
     </msapplication>
