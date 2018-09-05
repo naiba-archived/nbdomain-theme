@@ -1,10 +1,10 @@
-{{define "offical-superhero/index"}}
-{{template "offical-superhero/header" .}}
+{{define "offical-superhero/index"}} {{template "offical-superhero/header" .}}
 <header class="navbar">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+            <a class="navbar-item" href="/">
+                <img src="/upload/{{.Panel.ID}}-logo{{if not .Chinese}}_en{{end}}.png" alt="{{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}"
+                    width="112" height="28">
             </a>
             <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
                 <span></span>
@@ -15,15 +15,11 @@
 
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
+                {{range $cat := .Panel.Cats}}
                 <a class="navbar-item">
-                    分类1
+                    {{if $.Chinese}}{{$cat.Name}}{{else}}{{$cat.NameEn}}{{end}}
                 </a>
-                <a class="navbar-item">
-                    分类2
-                </a>
-                <a class="navbar-item">
-                    分类3
-                </a>
+                {{end}}
             </div>
 
             <div class="navbar-end">
@@ -35,7 +31,7 @@
                                     <i class="fas fa-headset"></i>
                                 </span>
                                 <span>
-                                    联系我们
+                                    {{if .Chinese}}联系我们{{else}}Contact{{end}}
                                 </span>
                             </a>
                         </p>
@@ -50,19 +46,20 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    一个好域名胜过一支营销团队
+                    {{if .Chinese}}一个好域名胜过一支营销团队{{else}}A good domain name is better than a marketing team.{{end}}
                 </h1>
                 <h2 class="subtitle">
-                    官人域名（guanren.com）是由资深域名投资人张大官人创建，前身是09年上线的知名域名平台泡名网（paoming.com），后因业务整合，于2013年9月1号将泡名网业务全部转移到官人域名（guanren.com）上。
+                    {{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}
                 </h2>
             </div>
         </div>
     </section>
 
+    {{range $cat := .Panel.Cats}}
     <div class="card domain-list equal-height-card main-card">
         <header class="card-header">
             <p class="card-header-title">
-                分类1
+                {{if $.Chinese}}{{$cat.Name}}{{else}}{{$cat.NameEn}}{{end}}
             </p>
             <p class="card-header-icon">
                 <span class="icon">
@@ -72,188 +69,40 @@
         </header>
         <div class="card-content">
             <div class="content">
-                <div class="columns is-multiline ">
-                    <a href="#" class="column is-one-fifth">
+                <div class="columns is-multiline">
+                    {{range $domain := $cat.Domains}}
+                    <a href="https://{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}" class="column is-one-fifth">
                         <div class="card">
                             <header class="card-header">
                                 <p class="card-header-title has-text-light">
-                                    QiongBi.net
+                                    {{$domain.Domain}}
                                 </p>
                                 <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
+                                    <span class="tag is-black">{{if $.Chinese}}点我报价{{else}}Make Offer{{end}}</span>
                                 </p>
                             </header>
                             <div class="card-content">
                                 <div class="content">
-                                    穷逼。
+                                    {{$domain.Desc}}
                                 </div>
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="column is-one-fifth">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title has-text-light">
-                                    QiongBi.net
-                                </p>
-                                <p class="card-header-icon">
-                                    <span class="tag is-black">点我报价</span>
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    穷逼。
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    {{end}}
                 </div>
             </div>
         </div>
     </div>
+    {{end}}
+
+
 
     <div id="contact" class="columns equal-height-card">
         <div class="column is-one-third">
             <div class="card main-card">
                 <header class="card-header">
                     <p class="card-header-title">
-                        联系我们
+                        {{if .Chinese}}联系我们{{else}}Contact{{end}}
                     </p>
                     <p class="card-header-icon">
                         <i class="fas fa-headset"></i>
@@ -261,11 +110,11 @@
                 </header>
                 <div class="card-content">
                     <div class="content">
-                        <p>如果您遇到任何问题，欢迎直接联系我们。</p>
-                        <p><i class="fas fa-phone"></i> 2088888812</p>
-                        <p><i class="fab fa-qq"></i> 2088888812</p>
-                        <p><i class="fab fa-weixin"></i> 2088888812</p>
-                        <p><i class="far fa-envelope"></i> 1@5.nu</p>
+                        <p>{{if .Chinese}}如果您遇到任何问题，欢迎直接联系我们。{{else}}Feel free to contact us.{{end}}</p>
+                        <p><i class="fas fa-phone"></i> {{.Panel.User.Phone}}</p>
+                        <p><i class="fab fa-qq"></i> {{.Panel.User.QQ}}</p>
+                        <p><i class="fab fa-weixin"></i> {{.Panel.User.Weixin}}</p>
+                        <p><i class="far fa-envelope"></i> {{.Panel.User.Mail}}</p>
                     </div>
                 </div>
             </div>
@@ -274,7 +123,7 @@
             <div class="card main-card">
                 <header class="card-header">
                     <p class="card-header-title">
-                        近期售出的域名
+                        {{if .Chinese}}近期售出的域名{{else}}Sold out{{end}}
                     </p>
                     <p class="card-header-icon">
                         <i class="fas fa-award"></i>
@@ -282,30 +131,11 @@
                 </header>
                 <div class="card-content">
                     <div class="content domain-soldout">
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
-                        <del>nb.ax</del>
-                        <del>Lifelonglearning.cc</del>
+                        <del>{{if .Chinese}}等待编辑{{else}}Waiting for edit.{{end}}</del>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{{template "offical-superhero/footer" .}}
-{{end}}
+{{template "offical-superhero/footer" .}} {{end}}
