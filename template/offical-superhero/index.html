@@ -16,7 +16,7 @@
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
                 {{range $cat := .Panel.Cats}}
-                <a class="navbar-item">
+                <a href="#cat-{{$cat.ID}}" class="navbar-item">
                     {{if $.Chinese}}{{$cat.Name}}{{else}}{{$cat.NameEn}}{{end}}
                 </a>
                 {{end}}
@@ -56,7 +56,7 @@
     </section>
 
     {{range $cat := .Panel.Cats}}
-    <div class="card domain-list equal-height-card main-card">
+    <div class="card domain-list equal-height-card main-card" id="#cat-{{$cat.ID}}">
         <header class="card-header">
             <p class="card-header-title">
                 {{if $.Chinese}}{{$cat.Name}}{{else}}{{$cat.NameEn}}{{end}}
