@@ -53,8 +53,10 @@
                                     <div class="control">
                                         <span class="select">
                                             <select>
-                                                <option>¥</option>
-                                                <option>$</option>
+                                                <option {{if $.Chinese}}selected{{end}}>¥
+                                                </option>
+                                                <option {{if not $.Chinese}}selected{{end}}>$
+                                                </option>
                                                 <option>€</option>
                                             </select>
                                         </span>

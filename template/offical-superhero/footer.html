@@ -8,8 +8,15 @@
         </a>
     </div>
 </footer>
-<script src='https://www.recaptcha.net/recaptcha/api.js'></script>
 <script src='https://www.runcuo.com/static/offical-superhero/js/naiba.js'></script>
+<script src='https://www.recaptcha.net/recaptcha/api.js'></script> {{if .Panel.Analysis}}
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111315498-7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{.Panel.Analysis}}');
+</script> {{end}}
 </body>
 
 </html>

@@ -56,7 +56,7 @@
     </section>
 
     {{range $cat := .Panel.Cats}}
-    <div class="card domain-list equal-height-card main-card" id="#cat-{{$cat.ID}}">
+    <div class="card domain-list equal-height-card main-card" id="cat-{{$cat.ID}}">
         <header class="card-header">
             <p class="card-header-title">
                 {{if $.Chinese}}{{$cat.Name}}{{else}}{{$cat.NameEn}}{{end}}
