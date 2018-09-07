@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <img src="https://www.riluo.cn/upload/logo/{{.Panel.ID}}-logo{{if not .Chinese}}_en{{end}}.png" alt="{{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}"
+                <img src="{{.Static}}/upload/logo/{{.Panel.ID}}-logo{{if not .Chinese}}_en{{end}}.png" alt="{{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}"
                     width="112" height="28">
             </a>
             <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -94,46 +94,28 @@
         </div>
     </div>
     {{end}}
-
-
-
-    <div id="contact" class="columns equal-height-card">
-        <div class="column is-one-third">
-            <div class="card main-card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        {{if .Chinese}}联系我们{{else}}Contact{{end}}
-                    </p>
-                    <p class="card-header-icon">
-                        <i class="fas fa-headset"></i>
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <p>{{if .Chinese}}如果您遇到任何问题，欢迎直接联系我们。{{else}}Feel free to contact us.{{end}}</p>
-                        <p><i class="fas fa-phone"></i> {{.Panel.User.Phone}}</p>
-                        <p><i class="fab fa-qq"></i> {{.Panel.User.QQ}}</p>
-                        <p><i class="fab fa-weixin"></i> {{.Panel.User.Weixin}}</p>
-                        <p><i class="far fa-envelope"></i> {{.Panel.User.Mail}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card main-card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        {{if .Chinese}}近期售出的域名{{else}}Sold out{{end}}
-                    </p>
-                    <p class="card-header-icon">
-                        <i class="fas fa-award"></i>
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content domain-soldout">
-                        <del>{{if .Chinese}}等待编辑{{else}}Waiting for edit.{{end}}</del>
-                    </div>
-                </div>
+    <div id="contact" class="card main-card">
+        <header class="card-header">
+            <p class="card-header-title">
+                {{if .Chinese}}联系我们{{else}}Contact{{end}}
+            </p>
+            <p class="card-header-icon">
+                <i class="fas fa-headset"></i>
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <p>{{if .Chinese}}如果您遇到任何问题，欢迎直接联系我们。{{else}}Feel free to contact us.{{end}}</p>
+                <p>
+                    <span><i class="fas fa-phone"></i> {{.Panel.User.Phone}}</span>
+                    <span><i class="fab fa-qq"></i>
+                        {{.Panel.User.QQ}}</span>
+                </p>
+                <p>
+                    <span><i class="fab fa-weixin"></i> {{.Panel.User.Weixin}}</span>
+                    <span><i class="far fa-envelope"></i>
+                        {{.Panel.User.Mail}}</span>
+                </p>
             </div>
         </div>
     </div>

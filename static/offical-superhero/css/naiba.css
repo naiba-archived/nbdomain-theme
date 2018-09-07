@@ -4,6 +4,13 @@
 
 .domain-list .is-one-fifth>.card .card-header-title {
     padding-bottom: 0px;
+    z-index: 1;
+}
+
+.domain-list .is-one-fifth>.card .card-header-icon {
+    display: block;
+    position: absolute;
+    right: 0;
 }
 
 .domain-soldout>del {
@@ -17,6 +24,10 @@
 
 #contact {
     margin-bottom: 20px;
+}
+
+#contact>.card-content>.content>p>span {
+    padding: 30px
 }
 
 .main-card {
