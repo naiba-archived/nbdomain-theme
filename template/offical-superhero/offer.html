@@ -6,7 +6,7 @@
                 <div class="card is-info">
                     <header class="card-header">
                         <p class="card-header-title has-text-light">
-                            {{.Domain.Domain}} {{if $.Chinese}}或许正在出售{{else}}Maybe for sale.{{end}}
+                            {{.Domain.Domain}} {{if $.Chinese}}或许正在出售{{else}}may be for sale.{{end}}
                         </p>
                         <p class="card-header-icon">
                             <span class="icon">
@@ -53,9 +53,9 @@
                                     <div class="control">
                                         <span class="select">
                                             <select>
-                                                <option {{if $.Chinese}}selected{{end}}>¥
+                                                <option {{if $.Chinese}} selected{{end}}>¥
                                                 </option>
-                                                <option {{if not $.Chinese}}selected{{end}}>$
+                                                <option {{if not $.Chinese}} selected{{end}}>$
                                                 </option>
                                                 <option>€</option>
                                             </select>
@@ -85,7 +85,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <button class="button is-primary">
+                                        <button class="button is-primary" onclick="alert('coming soon')">
                                             {{if $.Chinese}}提交{{else}}Submit{{end}}
                                         </button>
                                         <a href="/" class="button">
