@@ -15,86 +15,88 @@
                         </p>
                     </header>
                     <div class="card-content">
-                        <div class="box">
-                            <p>{{.Domain.Desc}}</p>
-                        </div>
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <label class="label">{{if $.Chinese}}来自{{else}}From{{end}}</label>
+                        <form id="offer" onsubmit="return onSubmit();">
+                            <div class="box">
+                                <p>{{.Domain.Desc}}</p>
                             </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control is-expanded has-icons-left">
-                                        <input class="input" type="text" placeholder="{{if $.Chinese}}姓名{{else}}Name{{end}}">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </p>
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">{{if $.Chinese}}来自{{else}}From{{end}}</label>
                                 </div>
-                                <div class="field">
-                                    <p class="control is-expanded has-icons-left has-icons-right">
-                                        <input class="input is-success" type="email" placeholder="hi@example.com">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                        <span class="icon is-small is-right">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field has-addons">
-                            <div class="field-label is-normal">
-                                <label class="label">{{if $.Chinese}}出价{{else}}Offer{{end}}</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="control">
-                                        <span class="select">
-                                            <select>
-                                                <option {{if $.Chinese}} selected{{end}}>¥
-                                                </option>
-                                                <option {{if not $.Chinese}} selected{{end}}>$
-                                                </option>
-                                                <option>€</option>
-                                            </select>
-                                        </span>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input name="Name" class="input" type="text" placeholder="{{if $.Chinese}}姓名{{else}}Name{{end}}">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                        </p>
                                     </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="{{if $.Chinese}}您的出价{{else}}Your Offer{{end}}">
+                                    <div class="field">
+                                        <p class="control is-expanded has-icons-left has-icons-right">
+                                            <input name="Mail" class="input is-success" type="email" placeholder="hi@example.com">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <span class="icon is-small is-right">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="field has-addons">
+                                <div class="field-label is-normal">
+                                    <label class="label">{{if $.Chinese}}出价{{else}}Offer{{end}}</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field is-narrow">
+                                        <div class="control">
+                                            <span class="select">
+                                                <select name="Currency">
+                                                    <option {{if $.Chinese}} selected{{end}}>¥
+                                                    </option>
+                                                    <option {{if not $.Chinese}} selected{{end}}>$
+                                                    </option>
+                                                    <option>€</option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <input name="Amount" class="input" type="number" placeholder="{{if $.Chinese}}您的出价{{else}}Your Offer{{end}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <label class="label">{{if $.Chinese}}反机器人{{else}}Anti-robot{{end}}</label>
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">{{if $.Chinese}}反机器人{{else}}Anti-robot{{end}}</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field g-recaptcha" data-sitekey="6LfQlWsUAAAAABvm5rFgCpmqGJJitynKiF_fePXR"></div>
+                                </div>
                             </div>
-                            <div class="field-body">
-                                <div class="field g-recaptcha" data-sitekey="6LfQlWsUAAAAABvm5rFgCpmqGJJitynKiF_fePXR"></div>
-                            </div>
-                        </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <button class="button is-primary" onclick="alert('coming soon')">
-                                            {{if $.Chinese}}提交{{else}}Submit{{end}}
-                                        </button>
-                                        <a href="/" class="button">
-                                            {{if $.Chinese}}了解更多域名{{else}}More Domains{{end}}
-                                        </a>
+                            <div class="field is-horizontal">
+                                <div class="field-label">
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <button class="button is-primary" type="submit">
+                                                {{if $.Chinese}}提交{{else}}Submit{{end}}
+                                            </button>
+                                            <a href="/" class="button">
+                                                {{if $.Chinese}}了解更多域名{{else}}More Domains{{end}}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
