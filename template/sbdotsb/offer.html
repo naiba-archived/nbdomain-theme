@@ -1,0 +1,151 @@
+{{define "sbdotsb/offer"}}
+<html>
+
+<head>
+    <title>{{.Title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.css.network/css?family=Open+Sans:400,300,700,600,800" rel="stylesheet">
+    <link href="https://cdn.css.net/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.css.net/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{.Static}}/static/sbdotsb/css/style.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{.Static}}/static/sbdotsb/js/layer/layer.js"></script>
+</head>
+
+<body>
+    <div class="theme-statefarm-v2 theme-white theme-imagery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 ov-hidden text-center lcontact-heading">
+                    <div class="initial-form">
+                        <h1 class="domain_name">{{.Domain.Domain}}</h1>
+                        <p class="subtitle">{{if .Chinese}}或许可以出售{{else}}may be for sale.{{end}}</p>
+                    </div>
+                    <hr class="top">
+                </div>
+                <div class="col-xs-12 lcontact-content">
+                    <div class="initial-form">
+                        <div class="clearfix">
+                            <h2 class="col-xs-12 col-sm-8 text-center center-block no-pull">
+                                {{if .Chinese}}获取此域名报价{{else}}Complete this form to get a
+                                price quote on{{end}}
+                                <strong class="domain_name">{{.Domain.Domain}} </strong>
+                                {{if .Chinese}}：{{else}}:{{end}}
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <form id="domainquery" method="post">
+                                <fieldset>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <div class="well">
+                                            <div class="form-group form-group-full_name">
+                                                <label class="control-label text-center fz-md" for="full_name">
+                                                    {{if .Chinese}}您的全称{{else}}Full Name{{end}}
+                                                </label>
+                                                <input class="form-control" type="text" name="Name" id="full_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <div class="well">
+                                            <div class="form-group form-group-email">
+                                                <label class="control-label text-center fz-md" for="email">
+                                                    {{if .Chinese}}邮箱地址{{else}}Email Address{{end}}
+                                                </label>
+                                                <input class="form-control" type="text" name="Mail" id="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <div class="well no-arrow">
+                                            <div class="form-group form-group-price">
+                                                <label class="control-label text-center fz-md" for="price">
+                                                    {{if .Chinese}}您的预算（美元）{{else}}Expected Price (US Dollar){{end}}
+                                                    <input type="hidden" name="Currency" value="$">
+                                                </label>
+                                                <input class="form-control" type="number" name="Amount" id="price">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 text-center"
+                                                id="recaptcha">
+                                                <div class="field g-recaptcha" data-sitekey="6LfQlWsUAAAAABvm5rFgCpmqGJJitynKiF_fePXR"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-xs-12 form-group-form">
+                                                <div class="alert alert-warning text-center help-block"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4" id="sub-a">
+                                                <button class="btn btn-primary btn-lg btn-block" id="submitquery"><i
+                                                        class="fa fa-circle-o-notch fa-spin hide"></i>
+                                                    {{if .Chinese}}获取报价{{else}}Get A Price Quote{{end}}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <p class="copyright text-center fz-sm">
+                        Copyright &#9400; 2017 <a href="https://{{.Panel.Domain}}">
+                            {{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}
+                        </a>. All rights reserved. Powered by <a href="{{.Static}}">日落域名资产管理系统</a> .
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://www.recaptcha.net/recaptcha/api.js'></script>
+    <script>
+        $('#submitquery').on('click', function () {
+            var full_name = $('#full_name').val();
+            var email = $('#email').val();
+            var price = $('#price').val();
+            var recaptcha = $('#g-recaptcha-response').val();
+
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!full_name || full_name.length < 2) {
+                layer.tips('{{if .Chinese}}请检查您的姓名{{else}}Please confirm your name.{{end}}', $('#full_name'), { tips: [3, '#FF5722'] });
+                $('#full_name').focus();
+                return false;
+            } else if (!email) {
+                layer.tips('{{if .Chinese}}请输入您的邮箱{{else}}Please enter your email.{{end}}', $('#email'), { tips: [3, '#FF5722'] });
+                $('#email').focus();
+                return false;
+            } else if (!re.test(email)) {
+                layer.tips('{{if .Chinese}}请检查您的邮箱{{else}}Please confirm your email.{{end}}', $('#email'), { tips: [3, '#FF5722'] });
+                $('#email').focus();
+                return false;
+            } else if (price < 1) {
+                layer.tips('{{if .Chinese}}请输入您的预算{{else}}Please enter your expected price.{{end}}', $('#price'), { tips: [3, '#FF5722'] });
+                $('#price').focus();
+                return false;
+            } else if (recaptcha.length < 20) {
+                layer.tips('{{if .Chinese}}请通过ReCaptcha验证{{else}}Please pass ReCaptcha test.{{end}}', $('#recaptcha'), { tips: [3, '#FF5722'] });
+                return false;
+            } else {
+                $.post('', $('#domainquery').serialize()).done(function () {
+                    alert("提交成功(Submit Successful)")
+                    document.getElementById('domainquery').reset()
+                }).fail(function (xhr) {
+                    alert(xhr.responseText)
+                }).always(function () {
+                    grecaptcha.reset()
+                });
+                return false;
+            }
+        })
+    </script>
+</body>
+
+</html>
+{{end}}

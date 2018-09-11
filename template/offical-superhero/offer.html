@@ -6,7 +6,7 @@
                 <div class="card is-info">
                     <header class="card-header">
                         <p class="card-header-title has-text-light">
-                            {{.Domain.Domain}} {{if $.Chinese}}或许可以出售{{else}}may be for sale.{{end}}
+                            {{.Domain.Domain}} {{if .Chinese}}或许可以出售{{else}}may be for sale.{{end}}
                         </p>
                         <p class="card-header-icon">
                             <span class="icon">
@@ -21,12 +21,12 @@
                             </div>
                             <div class="field is-horizontal">
                                 <div class="field-label is-normal">
-                                    <label class="label">{{if $.Chinese}}来自{{else}}From{{end}}</label>
+                                    <label class="label">{{if .Chinese}}来自{{else}}From{{end}}</label>
                                 </div>
                                 <div class="field-body">
                                     <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input name="Name" class="input" type="text" placeholder="{{if $.Chinese}}姓名{{else}}Name{{end}}">
+                                            <input name="Full Name" class="input" type="text" placeholder="{{if .Chinese}}姓名{{else}}Name{{end}}">
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-user"></i>
                                             </span>
@@ -47,16 +47,16 @@
                             </div>
                             <div class="field has-addons">
                                 <div class="field-label is-normal">
-                                    <label class="label">{{if $.Chinese}}出价{{else}}Offer{{end}}</label>
+                                    <label class="label">{{if .Chinese}}预算{{else}}Expected Price{{end}}</label>
                                 </div>
                                 <div class="field-body">
                                     <div class="field is-narrow">
                                         <div class="control">
                                             <span class="select">
                                                 <select name="Currency">
-                                                    <option {{if $.Chinese}} selected{{end}}>¥
+                                                    <option {{if .Chinese}} selected{{end}}>¥
                                                     </option>
-                                                    <option {{if not $.Chinese}} selected{{end}}>$
+                                                    <option {{if not .Chinese}} selected{{end}}>$
                                                     </option>
                                                     <option>€</option>
                                                 </select>
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="field">
                                         <div class="control">
-                                            <input name="Amount" class="input" type="number" placeholder="{{if $.Chinese}}您的出价{{else}}Your Offer{{end}}">
+                                            <input name="Amount" class="input" type="number" placeholder="{{if .Chinese}}您的预算{{else}}Expected Price{{end}}">
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
 
                             <div class="field is-horizontal">
                                 <div class="field-label is-normal">
-                                    <label class="label">{{if $.Chinese}}反机器人{{else}}Anti-robot{{end}}</label>
+                                    <label class="label">{{if .Chinese}}反机器人{{else}}Anti-robot{{end}}</label>
                                 </div>
                                 <div class="field-body">
                                     <div class="field g-recaptcha" data-sitekey="6LfQlWsUAAAAABvm5rFgCpmqGJJitynKiF_fePXR"></div>
@@ -87,10 +87,10 @@
                                     <div class="field">
                                         <div class="control">
                                             <button class="button is-primary" type="submit">
-                                                {{if $.Chinese}}提交{{else}}Submit{{end}}
+                                                {{if .Chinese}}提交{{else}}Submit{{end}}
                                             </button>
                                             <a href="/" class="button">
-                                                {{if $.Chinese}}了解更多域名{{else}}More Domains{{end}}
+                                                {{if .Chinese}}了解更多域名{{else}}More Domains{{end}}
                                             </a>
                                         </div>
                                     </div>

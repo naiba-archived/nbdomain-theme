@@ -67,6 +67,7 @@ function onSubmit() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
         if (xhr.status == 200) {
           alert("提交成功(Submit Successful)")
+          document.getElementById("offer").reset()
         } else {
           alert(xhr.responseText)
         }
