@@ -9,10 +9,10 @@
     <meta content="{{if .Chinese}}到 {{.Panel.Name}} 购买优质域名。{{else}}Buy premium domain names on {{.Panel.NameEn}}{{end}}"
         name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="https://cdnjs.cat.net/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cat.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.cat.net/css?family=Saira+Semi+Condensed" rel="stylesheet">
-    <script src="https://cdnjs.cat.net/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.loli.net/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.loli.net/css?family=Saira+Semi+Condensed" rel="stylesheet">
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <style type="text/css">
         body {
             font-family: 'Saira Semi Condensed', sans-serif;
@@ -104,8 +104,9 @@
                         {{range $domain := $cat.Domains}}
                         <tr>
                             <td class='name'>{{$domain.Domain}}</td>
-                            <td class='desc'><a href='https://{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}'>Make
-                                    Offer</a></td>
+                            <td class='desc'><a href='https://{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}'>
+                                {{if $.Chinese}}获取报价{{else}}Make Offer{{end}}
+                            </a></td>
                             <td type='price'>{{$domain.Desc}}</td>
                         </tr>
                         {{end}}
@@ -139,7 +140,7 @@
                 </a>. All rights reserved. Powered by <a href="{{.Static}}">日落域名资产管理系统</a> .</p>
         </div>
     </footer>
-    <script src="https://cdnjs.cat.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 
 </html>
