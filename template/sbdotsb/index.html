@@ -50,6 +50,16 @@
             color: gray;
         }
     </style>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{.Static}}/static/offical/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{.Static}}/static/offical/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{.Static}}/static/offical/icons/favicon-16x16.png">
+    <link rel="manifest" href="{{.Static}}/static/offical/icons/site.webmanifest">
+    <link rel="mask-icon" href="{{.Static}}/static/offical/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="{{.Static}}/static/offical/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{{.Static}}/static/offical/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -105,8 +115,8 @@
                         <tr>
                             <td class='name'>{{$domain.Domain}}</td>
                             <td class='desc'><a href='https://{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}'>
-                                {{if $.Chinese}}获取报价{{else}}Make Offer{{end}}
-                            </a></td>
+                                    {{if $.Chinese}}获取报价{{else}}Make Offer{{end}}
+                                </a></td>
                             <td type='price'>{{$domain.Desc}}</td>
                         </tr>
                         {{end}}
