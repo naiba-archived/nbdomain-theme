@@ -3,7 +3,24 @@
     <div class="content has-text-centered">
         <p>2018 &copy; <a href="https://{{.Panel.Domain}}">
                 {{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}
-            </a></p>
+            </a>
+            {{if .Panel.Analysis}}
+            {{if eq .Panel.AnalysisType "g"}}
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{.Panel.Analysis}}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', '{{.Panel.Analysis}}');
+            </script>
+            {{else if eq .Panel.AnalysisType "c"}}
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_{{.Panel.Analysis}}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D{{.Panel.Analysis}}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            {{end}}
+            {{end}}
+        </p>
         <a href="{{.Static}}" class="tags has-addons is-inline-flex">
             <span class="tag is-light">日落域名资产管理系统</span>
             <span class="tag is-dark">强力驱动</span>
@@ -12,15 +29,7 @@
 </footer>
 <script src='https://www.recaptcha.net/recaptcha/api.js'></script>
 <script src='{{.Static}}/static/offical-superhero/js/naiba.js'></script>
-{{if .Panel.Analysis}}
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111315498-7"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', '{{.Panel.Analysis}}');
-</script>
-{{end}}
+
 </body>
 
 </html>
