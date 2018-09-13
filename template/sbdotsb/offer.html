@@ -176,6 +176,15 @@
             document.body.style.backgroundImage = "url('https://source.unsplash.com/random')";
         }
     </script>
+    {{if .Panel.Analysis}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111315498-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{.Panel.Analysis}}');
+    </script>
+    {{end}}
 </body>
 
 </html>
