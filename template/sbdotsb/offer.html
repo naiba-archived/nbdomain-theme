@@ -21,6 +21,12 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="{{.Static}}/static/offical/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <style>
+        #submitquery {
+            margin-top: 15px;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,10 +44,9 @@
                     <div class="initial-form">
                         <div class="clearfix">
                             <h2 class="col-xs-12 col-sm-8 text-center center-block no-pull">
-                                {{if .Chinese}}获取此域名报价{{else}}Complete this form to get a
-                                price quote on{{end}}
-                                <strong class="domain_name">{{.Domain.Domain}} </strong>
-                                {{if .Chinese}}：{{else}}:{{end}}
+                                {{if .Chinese}}填写此表格来获取<strong class="domain_name"> {{.Domain.Domain}} </strong>的报价：{{else}}Complete
+                                this form to get a price quote on <strong class="domain_name"> {{.Domain.Domain}}
+                                </strong>:{{end}}
                             </h2>
                         </div>
                         <div class="row">
@@ -51,7 +56,7 @@
                                         <div class="well">
                                             <div class="form-group form-group-full_name">
                                                 <label class="control-label text-center fz-md" for="full_name">
-                                                    {{if .Chinese}}您的全称{{else}}Full Name{{end}}
+                                                    {{if .Chinese}}您的姓名{{else}}Full Name{{end}}
                                                 </label>
                                                 <input class="form-control" type="text" name="Name" id="full_name">
                                             </div>
@@ -61,7 +66,7 @@
                                         <div class="well">
                                             <div class="form-group form-group-email">
                                                 <label class="control-label text-center fz-md" for="email">
-                                                    {{if .Chinese}}邮箱地址{{else}}Email Address{{end}}
+                                                    {{if .Chinese}}您的邮箱{{else}}Email Address{{end}}
                                                 </label>
                                                 <input class="form-control" type="text" name="Mail" id="email">
                                             </div>
@@ -154,6 +159,7 @@
                 return false;
             }
         })
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/random')";
     </script>
 </body>
 
