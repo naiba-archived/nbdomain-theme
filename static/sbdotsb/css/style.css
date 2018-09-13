@@ -4,8 +4,7 @@
  * http://21beats.com
  */
 
-body,
-.well:before {
+body {
     background: url(/static/sbdotsb/images/bg.jpg) center / cover no-repeat fixed;
 }
 
@@ -71,7 +70,7 @@ hr {
 
 .well {
     position: relative;
-    background: rgba(255, 255, 255, .2);
+    background: rgba(0, 0, 0, .2);
     border: 0;
     box-shadow: inset 0 0 1px #fff, 0 1px 3px rgba(0, 0, 0, .3);
     padding: 40px 30px 45px;
@@ -137,9 +136,11 @@ hr {
     color: inherit;
     font-size: inherit;
 }
+
 .g-recaptcha {
     display: inline-block;
 }
+
 @media ( min-width: 768px) {
     .lcontact-heading .initial-form {
         margin-bottom: 45px;
