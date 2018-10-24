@@ -114,7 +114,7 @@
                         {{range $domain := $cat.Domains}}
                         <tr>
                             <td class='name'>{{$domain.Domain}}</td>
-                            <td class='desc'><a href='https://{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}'>
+                            <td class='desc'><a href='//{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}'>
                                     {{if $.Chinese}}获取报价{{else}}Make Offer{{end}}
                                 </a></td>
                             <td type='price'>{{$domain.Desc}}</td>
@@ -145,7 +145,7 @@
     </div>
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">Copyright &#9400; 2017 <a href="https://{{.Panel.Domain}}">
+            <p class="text-muted">Copyright &#9400; 2017 <a href="//{{.Panel.Domain}}">
                     {{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}
                 </a>. All rights reserved. Powered by <a href="{{.Static}}">日落域名资产管理系统</a> .
                 {{if .Panel.Analysis}}
