@@ -67,6 +67,7 @@ small {
     background: #000;
     border: 1px solid #F5F5F5;
     border-radius: 4px;
+    display: table;
 }
 
 #content {
@@ -125,7 +126,6 @@ small {
 /* End Structure*/
 
 /* begin header*/
-
 #header h1 {
     font-size: 1.5em;
     text-align: left;
@@ -140,9 +140,8 @@ small {
 }
 
 .description {
-    padding: 3px 0px 0px 20px;
+    padding: 3px 0px 10px 20px;
     font-size: 1em;
-    width: 650px;
 }
 
 #fontControls {
@@ -158,28 +157,27 @@ small {
 }
 
 #navbar {
-    float: right;
     width: 250px;
-    height: 65px;
-    overflow: hidden;
     padding: 5px 5px 0px 2px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-#lmenu {
+#top {
     float: right;
     list-style-type: none;
     text-align: center;
     font-size: 1.1em;
 }
 
-#lmenu li {
+#top li {
     border-left: 1px solid #414F58;
     display: inline;
     float: left;
     display: block;
 }
 
-#lmenu li a {
+#top li a {
     float: left;
     background: #364249;
     color: #CCCCCC;
@@ -191,7 +189,7 @@ small {
     line-height: 65px;
 }
 
-#lmenu li a:hover {
+#top li a:hover {
     background-color: #414F58;
     text-decoration: none;
 }
