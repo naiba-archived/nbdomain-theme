@@ -1,0 +1,92 @@
+{{define "bocai/index"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{.Title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url({{.Static}}/static/bocai/bj.gif)
+        }
+
+        a {
+            text-decoration: none;
+            color: lime;
+        }
+
+        table td {
+            border: inset white 1.0pt;
+            background: black;
+            padding: .75pt .75pt .75pt 6.0pt;
+            height: 37.5pt
+        }
+
+        .domain {
+            font-size: 18pt;
+            font-weight: bolder;
+        }
+
+        .desc {
+            font-size: 18pt;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="920" align="center" border="5" cellpadding="1" cellspacing="8" bordercolor="#FFFFFF">
+        <tbody>
+            <tr>
+                <td colspan="2" height="114">
+                    <b>
+                        <span style="color: #FFFF00;font-size: 18pt">QQ </span>
+                    </b>
+                    <span style="font-size: 18.0pt; color: red"><span style="background-color: #FFFF00">{{.Panel.User.QQ}}
+                            <a href="tencent://message/?uin={{.Panel.User.QQ}}"><img src="{{.Static}}/static/bocai/qq.gif"
+                                    width="14" height="15"></a></span>&nbsp;
+                        微信 {{.Panel.User.Weixin}}</span><span style="font-size:18.0pt;color:red">&nbsp;行动电话：<span>{{.Panel.User.Phone}}</span></span>
+                    <p> <img src="{{.Static}}/static/bocai/shou.gif">
+                        <b style="color:lime;font-size:30px;">一個好域名胜过一支营销团队！</b>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:34%;border:1.0pt inset white;mso-border-alt:
+    inset white .75pt;background:black;padding-left:6.0pt; padding-right:.75pt; padding-top:.75pt; padding-bottom:.75pt"
+                    width="43%">
+                    <strong style="color: yellow; letter-spacing: 1.5pt"><span style="font-size:19.5pt"><a href="//{{.Panel.Domain}}">
+                                {{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}
+                            </a></span></strong></td>
+                <td style="width:60%;border:1.0pt inset white;mso-border-alt:
+    inset white .75pt;background:black;padding-left:6.0pt; padding-right:.75pt; padding-top:.75pt; padding-bottom:.75pt"
+                    width="57%">
+                    <p style="color:lime;font-size: 18pt">
+                        {{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}
+                    </p>
+                </td>
+            </tr>
+            {{range $cat := .Panel.Cats}}
+
+            <tr>
+                <td colspan="2">
+                    <strong style="color:yellow;font-size:18pt">
+                        {{if $.Chinese}}{{$cat.Name}}{{else}}{{$cat.NameEn}}{{end}}
+                    </strong>
+                </td>
+            </tr>
+            {{range $domain := $cat.Domains}}
+            <tr>
+                <td><a class="domain" href="//{{$.Panel.Domain}}/offer/{{$domain.Domain|toLower}}">{{$domain.Domain}}</a></td>
+                <td><strong class="desc">{{$domain.Desc}}</strong></td>
+            </tr>
+            {{end}}
+            {{end}}
+        </tbody>
+    </table>
+</body>
+
+</html>
+{{end}}
