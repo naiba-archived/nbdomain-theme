@@ -29,6 +29,12 @@
 <body>
     <div id="page">
         <div id="header">
+            <div style="display:table-cell;vertical-align: middle">
+                <p style="float:left;margin-left: 20px">
+                    <img src="{{.Static}}/upload/logo/{{.Panel.ID}}-logo{{if not .Chinese}}_en{{end}}.png" alt="{{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}"
+                        width="112">
+                </p>
+            </div>
             <h1><a href="/">{{.Title}}</a></h1>
             <div class="description">{{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}</div>
             <div id="navbar">
