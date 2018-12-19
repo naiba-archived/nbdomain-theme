@@ -64,7 +64,7 @@
     inset white .75pt;background:black;padding-left:6.0pt; padding-right:.75pt; padding-top:.75pt; padding-bottom:.75pt"
                     width="57%">
                     <p style="color:lime;font-size: 18pt">
-                        {{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}
+                        {{if .Chinese}}{{.Panel.Desc|nl2br}}{{else}}{{.Panel.DescEn|nl2br}}{{end}}
                     </p>
                 </td>
             </tr>

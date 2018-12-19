@@ -49,7 +49,7 @@
                     {{if .Chinese}}一个好域名胜过一支营销团队{{else}}A good domain name is better than a marketing team.{{end}}
                 </h1>
                 <h2 class="subtitle">
-                    {{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}
+                    {{if .Chinese}}{{.Panel.Desc|nl2br}}{{else}}{{.Panel.DescEn|nl2br}}{{end}}
                 </h2>
             </div>
         </div>

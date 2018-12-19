@@ -36,7 +36,7 @@
                 </p>
             </div>
             <h1><a href="/">{{.Title}}</a></h1>
-            <div class="description">{{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}</div>
+            <div class="description">{{if .Chinese}}{{.Panel.Desc|nl2br}}{{else}}{{.Panel.DescEn|nl2br}}{{end}}</div>
             <div id="navbar">
                 <ul id="top">
                     邮件 | E-mail:{{.Panel.User.Mail}}<br />

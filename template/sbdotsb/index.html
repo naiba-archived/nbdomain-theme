@@ -95,7 +95,7 @@
                 {{if .Chinese}}一个好域名胜过一支营销团队{{else}}A good domain name is better than a marketing team.{{end}}
             </div>
             <div class="panel-body">
-                <p>{{if .Chinese}}{{.Panel.Desc}}{{else}}{{.Panel.DescEn}}{{end}}</p>
+                <p>{{if .Chinese}}{{.Panel.Desc|nl2br}}{{else}}{{.Panel.DescEn|nl2br}}{{end}}</p>
             </div>
         </div>
         {{range $cat := .Panel.Cats}}
