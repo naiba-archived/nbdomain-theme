@@ -26,15 +26,16 @@
         #submitquery {
             margin-top: 15px;
         }
+
         @media (min-height:800px) and (min-width:700px) {
-                .vm {
-                    margin: 0;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
+            .vm {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
+        }
     </style>
 </head>
 
@@ -53,7 +54,8 @@
                     <div class="initial-form">
                         <div class="clearfix">
                             <h2 class="col-xs-12 col-sm-8 text-center center-block no-pull">
-                                {{if .Chinese}}填写此表格来获取<strong class="domain_name"> {{.Domain.Domain}} </strong>的报价：{{else}}Complete
+                                {{if .Chinese}}填写此表格来获取<strong class="domain_name"> {{.Domain.Domain}}
+                                </strong>的报价：{{else}}Complete
                                 this form to get a price quote on <strong class="domain_name"> {{.Domain.Domain}}
                                 </strong>:{{end}}
                             </h2>
@@ -96,7 +98,7 @@
                                         <div class="row">
                                             <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 text-center"
                                                 id="recaptcha">
-                                                <div class="field g-recaptcha" data-sitekey="6LdXVIsUAAAAAO_rUUlsaXC_9nhkzCJ_Dq9axMpH"></div>
+                                                <div class="field g-recaptcha" data-sitekey="{{.ReCaptcha}}"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -122,23 +124,24 @@
                     <p class="copyright text-center fz-sm">
                         Copyright &#9400; 2018 <a href="//{{.Panel.Domain}}">
                             {{if .Chinese}}{{.Panel.Name}}{{else}}{{.Panel.NameEn}}{{end}}
-                        <!-- </a>. All rights reserved. Powered by <a href="{{.Static}}">日落米表托管</a> . -->
-                        {{if .Panel.Analysis}}
-                        {{if eq .Panel.AnalysisType "g"}}
-                        <script async src="https://www.googletagmanager.com/gtag/js?id={{.Panel.Analysis}}"></script>
-                        <script>
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag() { dataLayer.push(arguments); }
-                            gtag('js', new Date());
-                            gtag('config', '{{.Panel.Analysis}}');
-                        </script>
-                        {{else if eq .Panel.AnalysisType "c"}}
-                        <script type="text/javascript">
-                            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                            document.write(unescape("%3Cspan id='cnzz_stat_icon_{{.Panel.Analysis}}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D{{.Panel.Analysis}}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-                        </script>
-                        {{end}}
-                        {{end}}
+                            <!-- </a>. All rights reserved. Powered by <a href="{{.Static}}">日落米表托管</a> . -->
+                            {{if .Panel.Analysis}}
+                            {{if eq .Panel.AnalysisType "g"}}
+                            <script async
+                                src="https://www.googletagmanager.com/gtag/js?id={{.Panel.Analysis}}"></script>
+                            <script>
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag() { dataLayer.push(arguments); }
+                                gtag('js', new Date());
+                                gtag('config', '{{.Panel.Analysis}}');
+                            </script>
+                            {{else if eq .Panel.AnalysisType "c"}}
+                            <script type="text/javascript">
+                                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                                document.write(unescape("%3Cspan id='cnzz_stat_icon_{{.Panel.Analysis}}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D{{.Panel.Analysis}}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+                            </script>
+                            {{end}}
+                            {{end}}
                     </p>
                 </div>
             </div>
